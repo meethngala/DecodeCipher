@@ -1,0 +1,236 @@
+
+NetBeans IDENetBeans PlatformPluginsDocs & SupportCommunityPartners
+
+Search
+  search
+HOME / NetBeans forums
+NetBeans Forums
+
+ FAQFAQ   SearchSearch   MemberlistMemberlist   RegisterRegister   ProfileProfile   Log in to check your private messagesLog in to check your private messages   Log inLog in 
+  
+
+Not able to submit breakpoint : No executable location available
+
+ 
+Post new topic   Reply to topic	   NetBeans Forums -> NetBeans Users
+View previous topic :: View next topic  
+Author	Message
+pgarcia
+
+
+
+Joined: 07 Jul 2009
+Posts: 3
+
+PostPosted: Tue Jul 07, 2009 8:12 pm    Post subject: Not able to submit breakpoint : No executable location available	Reply with quote
+Question 
+Hi. I'm trying to do remote debugging of a java application in NB 6.5. After attaching a debugger every breakpoint icon turns to a split pink square, and for every one i get the following message: Not able to submit breakpoint LineBreakpoint MyClass.java : 2611, reason: No executable location available at line 2611 in class MyClass.. The same happens for every line i try to set up a breakpoint in. 
+
+Can someone help me?.
+Back to top	
+ 	
+
+emiddio-verizon
+Posted via mailing list.
+
+
+
+
+
+PostPosted: Tue Jul 07, 2009 8:38 pm    Post subject: Not able to submit breakpoint : No executable location available	Reply with quote
+i have to deal with the issue alot; 
+
+if you have muliple projects open with the same class names -- i do 
+sometimes when 
+working on multiple revisions -- you have to make sure you set the break 
+point 
+in the correct file that is actually deployed; ie -- in the correct project; 
+
+you can alsoo if you want make sure all projects with the dups you dont want 
+to access are closed to help. 
+
+
+also -- you have to make sure under windows/debugging/sources that your 
+source 
+root is also enabled; sometimes it automatically gets enabled, sometime you 
+specifically have to add the source root and enable it with the checkbox 
+
+gary 
+
+----- Original Message ----- 
+From: "pgarcia" <address-removed> 
+To: <address-removed> 
+Sent: Tuesday, July 07, 2009 1:12 PM 
+Subject: [nbusers] Not able to submit breakpoint : No executable location 
+available 
+
+
+Quote:
+[Question] 
+
+Hi. I'm trying to do remote debugging of a java application in NB 6.5. 
+After attaching a debugger every breakpoint icon turns to a split pink 
+square, and for every one i get the following message: Not able to submit 
+breakpoint LineBreakpoint MyClass.java : 2611, reason: No executable 
+location available at line 2611 in class MyClass.. The same happens for 
+every line i try to set up a breakpoint in. 
+
+
+
+Can someone help me?. 
+
+
+
+Back to top	
+ 	
+
+emiddio-verizon
+Posted via mailing list.
+
+
+
+
+
+PostPosted: Tue Jul 07, 2009 8:40 pm    Post subject: Not able to submit breakpoint : No executable location available	Reply with quote
+also make sure you have compiled with debugging enabled 
+usually project/properties/build/compiling/generate debugging info checkbox 
+
+gary 
+
+----- Original Message ----- 
+From: "pgarcia" <address-removed> 
+To: <address-removed> 
+Sent: Tuesday, July 07, 2009 1:12 PM 
+Subject: [nbusers] Not able to submit breakpoint : No executable location 
+available 
+
+
+Quote:
+[Question] 
+
+Hi. I'm trying to do remote debugging of a java application in NB 6.5. 
+After attaching a debugger every breakpoint icon turns to a split pink 
+square, and for every one i get the following message: Not able to submit 
+breakpoint LineBreakpoint MyClass.java : 2611, reason: No executable 
+location available at line 2611 in class MyClass.. The same happens for 
+every line i try to set up a breakpoint in. 
+
+
+
+Can someone help me?. 
+
+
+
+Back to top	
+ 	
+
+Melongo Annabel
+Posted via mailing list.
+
+
+
+
+
+PostPosted: Wed Jul 08, 2009 11:07 pm    Post subject: Not able to submit breakpoint : No executable location available	Reply with quote
+Can you please file this at: http://qa.netbeans.org/ Under "Report A Problem". Thanks.From: pgarcia <address-removed> 
+To: address-removed 
+Sent: Tuesday, July 7, 2009 3:12:58 PM 
+Subject: [nbusers] Not able to submit breakpoint : No executable location available 
+
+[Question] 
+
+Hi. I'm trying to do remote debugging of a java application in NB 6.5. After attaching a debugger every breakpoint icon turns to a split pink square, and for every one i get the following message: Not able to submit breakpoint LineBreakpoint MyClass.java : 2611, reason: No executable location available at line 2611 in class MyClass.. The same happens for every line i try to set up a breakpoint in. 
+
+
+
+Can someone help me?.
+Back to top	
+ 	
+
+dcam
+
+
+
+Joined: 23 Feb 2009
+Posts: 5
+
+PostPosted: Fri Jul 10, 2009 3:41 am    Post subject:	Reply with quote
+I also see this problem and I've made a bug report at http://www.netbeans.org/issues/show_bug.cgi?id=168380
+Back to top	
+ 	
+
+ruthst00
+
+
+
+Joined: 13 Jul 2009
+Posts: 1
+
+PostPosted: Mon Jul 13, 2009 7:19 am    Post subject:	Reply with quote
+I was able to get past this issue by closing my project, shutting down Netbeans, launching Netbeans, opening my project, then doing a clean and build. Now I can set breakpoints in my code.
+Back to top	
+ 	
+
+Glenn Holmer
+Posted via mailing list.
+
+
+
+
+
+PostPosted: Mon Jul 13, 2009 1:20 pm    Post subject: Not able to submit breakpoint : No executable location available	Reply with quote
+On Fri, 2009-07-10 at 03:41 +0000, dcam wrote: 
+Quote:
+I also see this problem and I've made a bug report at 
+http://www.netbeans.org/issues/show_bug.cgi?id=168380 
+
+Is it this issue? 
+
+http://www.netbeans.org/issues/show_bug.cgi?id=115033 
+
+If so, it will be fixed in 6.7.1 (to be released at the end of July). 
+
+-- 
+____________________________________________________________ 
+Glenn Holmer address-removed 
+Software Engineer phone: 414-908-1809 
+Weyco Group, Inc. fax: 414-908-1601
+Back to top	
+ 	
+
+aruljose
+
+
+
+Joined: 19 Jun 2009
+Posts: 3
+
+PostPosted: Thu Jan 21, 2010 11:32 am    Post subject:	Reply with quote
+Quote:
+also make sure you have compiled with debugging enabled
+
+This has helped. Thanks. 
+
+I pressed 'apply code changes', then immediately i was able to apply breakpoint.
+Back to top	
+ 	
+
+Display posts from previous:   Go
+Post new topic   Reply to topic	   NetBeans Forums -> NetBeans Users	All times are GMT
+Page 1 of 1
+
+ 
+Jump to:  Go
+You cannot post new topics in this forum
+You cannot reply to topics in this forum
+You cannot edit your posts in this forum
+You cannot delete your posts in this forum
+You cannot vote in polls in this forum
+You cannot attach files in this forum
+You can download files in this forum
+
+
+Powered by phpBB
+facebookyoutubegoogle+twitter
+SiteMapAbout UsContactLegal & Licences
+By use of this website, you agree to the NetBeans Policies and Terms of Use. © 2012, Oracle Corporation and/or its affiliates. Sponsored by Oracle logo
